@@ -1,0 +1,23 @@
+
+curl -X POST "http://localhost:3000/reservations" -H "Content-Type: application/json" -d '{
+  "party_size": 4,
+  "user_name": "John Doe",
+  "user_mobile": "1234567890",
+  "restaurant_id": "restaurant123",
+  "reservation_date": "2023-04-30T00:00:00.000Z",
+  "reservation_time": "18:00",
+  "status": "pending"
+}'
+
+curl -X POST "http://localhost:3000/reservations" -H "Content-Type: application/json" -d '{
+  "user_name": "Abdul Khalid",
+  "user_mobile": "9599953045",
+  "restaurant_id": "restaurant123",
+  "reservation_date": "2023-04-30",
+  "reservation_time": "18:00"
+}'
+
+curl -X PATCH -H "Content-Type: application/json" -d '{"status": "accepted"}' http://localhost:3000/reservations/64268b29c65a9d75d2ccc335/status
+curl -X PATCH -H "Content-Type: application/json" -d '{"status": "declined"}' http://localhost:3000/reservations/64268b29c65a9d75d2ccc335/status
+
+curl -X PATCH "http://localhost:3000/reservations/64268b29c65a9d75d2ccc335/check-in-status" -H "Content-Type: application/json" -d '{ "check_in_status": "arrived" }'
