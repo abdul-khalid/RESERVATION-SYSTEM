@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -102,3 +103,18 @@ dist
 
 # TernJS port file
 .tern-port
+=======
+# Generated files and directories
+/dist
+/node_modules
+
+# IDE and editor files
+/.vscode
+/.idea
+
+# System files
+.DS_Store
+
+# Environment variables
+.env
+>>>>>>> master
